@@ -10723,6 +10723,8 @@ function GetFullPath(&$path,$basepath='') {
 
 // Used for external CSS files
 function _get_file($path) {
+	// safely cast back already encoded "&" within the query 
+	$path = str_replace( "&amp;","&",$path );
 	// If local file try using local path (? quicker, but also allowed even if allow_url_fopen false)
 	$contents = '';
 	$contents = @file_get_contents($path);

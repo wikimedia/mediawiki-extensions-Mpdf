@@ -13591,81 +13591,45 @@ function border_details($bd) {
 	if (isset($this->blk[$this->blklvl]['inner_width'])) { $refw = $this->blk[$this->blklvl]['inner_width']; }
 	else if (isset($this->blk[$this->blklvl-1]['inner_width'])) { $refw = $this->blk[$this->blklvl-1]['inner_width']; }
 	else { $refw = $this->w; }
-	if ( count($prop) == 1 ) { 
-		$bsize = $this->ConvertSize($prop[0],$refw,$this->FontSize,false);
-		if ($bsize > 0) {
-			return array('s' => 1, 'w' => $bsize, 'c' => $this->ConvertColor(0), 'style'=>'solid');
-		}
-		else { return array('w' => 0, 's' => 0); }
+
+	preg_match_all('(\w+(?:\(.*?\))?)', $bd, $match, PREG_SET_ORDER);
+
+	foreach ($match as $prop) {
+		// solid
+		if ( in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { $s = $prop[0]; }
+		// 1px 
+		else if ( preg_match('/^\d.*|thin|medium|thick/', $prop[0], $tmp) ) { $w = $prop[0]; }
+		// #000000
+		else { $c = $prop[0]; }
 	}
 
-	else if (count($prop) == 2 ) { 
-		// 1px solid 
-		if (in_array($prop[1],$this->borderstyles) || $prop[1] == 'none' || $prop[1] == 'hidden' ) { $prop[2] = ''; }
-		// solid #000000 
-		else if (in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { $prop[0] = ''; $prop[1] = $prop[0]; $prop[2] = $prop[1]; }
-		// 1px #000000 
-		else { $prop[1] = ''; $prop[2] = $prop[1]; }
-	}
-	else if ( count($prop) == 3 ) {
-		// Change #000000 1px solid to 1px solid #000000 (proper)
-		if (substr($prop[0],0,1) == '#') { $tmp = $prop[0]; $prop[0] = $prop[1]; $prop[1] = $prop[2]; $prop[2] = $tmp; }
-		// Change solid #000000 1px to 1px solid #000000 (proper)
-		else if (substr($prop[0],1,1) == '#') { $tmp = $prop[1]; $prop[0] = $prop[2]; $prop[1] = $prop[0]; $prop[2] = $tmp; }
-		// Change solid 1px #000000 to 1px solid #000000 (proper)
-		else if (in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { 
-			$tmp = $prop[0]; $prop[0] = $prop[1]; $prop[1] = $tmp; 
-		}
-	}
-	else { return array(); } 
 	// Size
-	$bsize = $this->ConvertSize($prop[0],$refw,$this->FontSize,false);
+	$bsize = $this->ConvertSize($w,$refw,$this->FontSize,false);
 	//color
-	$coul = $this->ConvertColor($prop[2]);	// returns array
+	$coul = $this->ConvertColor($c);	// returns array
 	// Style
-	$prop[1] = strtolower($prop[1]);
-	if (in_array($prop[1],$this->borderstyles) && $bsize > 0) { $on = 1; } 
-	else if ($prop[1] == 'hidden') { $on = 1; $bsize = 0; $coul = ''; } 
-	else if ($prop[1] == 'none') { $on = 0; $bsize = 0; $coul = ''; } 
-	else { $on = 0; $bsize = 0; $coul = ''; $prop[1] = ''; }
-	return array('s' => $on, 'w' => $bsize, 'c' => $coul, 'style'=> $prop[1] );
+	$s = strtolower($s);
+	if (in_array($s,$this->borderstyles) && $bsize > 0) { $on = 1; } 
+	else if ($s == 'hidden') { $on = 1; $bsize = 0; $coul = ''; } 
+	else if ($s == 'none') { $on = 0; $bsize = 0; $coul = ''; } 
+	else { $on = 0; $bsize = 0; $coul = ''; $s = ''; }
+	return array('s' => $on, 'w' => $bsize, 'c' => $coul, 'style'=> $s );
 }
 
 
 function _fix_borderStr($bd) {
-	$prop = preg_split('/\s+/',trim($bd));
 	$w = 'medium';
 	$c = '#000000';
 	$s = 'none';
 
-	if ( count($prop) == 1 ) { 
+	foreach ($match as $prop) {
 		// solid
-		if (in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { $s = $prop[0]; }
-		// #000000
-		else if (is_array($this->ConvertColor($prop[0]))) { $c = $prop[0]; }
+		if ( in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { $s = $prop[0]; }
 		// 1px 
-		else { $w = $prop[0]; }
+		else if ( preg_match('/^\d.*|thin|medium|thick/', $prop[0], $tmp) ) { $w = $prop[0]; }
+		// #000000
+		else { $c = $prop[0]; }
 	}
-	else if (count($prop) == 2 ) { 
-		// 1px solid 
-		if (in_array($prop[1],$this->borderstyles) || $prop[1] == 'none' || $prop[1] == 'hidden' ) { $w = $prop[0]; $s = $prop[1]; }
-		// solid #000000 
-		else if (in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { $s = $prop[0]; $c = $prop[1]; }
-		// 1px #000000 
-		else { $w = $prop[0]; $c = $prop[1]; }
-	}
-	else if ( count($prop) == 3 ) {
-		// Change #000000 1px solid to 1px solid #000000 (proper)
-		if (substr($prop[0],0,1) == '#') { $c = $prop[0]; $w = $prop[1]; $s = $prop[2]; }
-		// Change solid #000000 1px to 1px solid #000000 (proper)
-		else if (substr($prop[0],1,1) == '#') { $s = $prop[0]; $c = $prop[1]; $w = $prop[2]; }
-		// Change solid 1px #000000 to 1px solid #000000 (proper)
-		else if (in_array($prop[0],$this->borderstyles) || $prop[0] == 'none' || $prop[0] == 'hidden' ) { 
-			$s = $prop[0]; $w = $prop[1]; $c = $prop[2]; 
-		}
-		else { $w = $prop[0]; $s = $prop[1]; $c = $prop[2]; }
-	}
-	else { return ''; } 
 	$s = strtolower($s);
 	return $w.' '.$s.' '.$c;
 }

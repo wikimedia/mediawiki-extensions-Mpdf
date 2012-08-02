@@ -17745,8 +17745,8 @@ function OpenTag($tag,$attr)
 
 	if (isset($attr['BORDER'])) {
 		$this->table_border_attr_set = 1;
-		if ($attr['BORDER']=='1') {
-		   $bord = $this->border_details('#000000 1px solid');
+		if (intval($attr['BORDER']) > 0) {
+		   $bord = $this->border_details('#000000 '.intval($attr['BORDER']).'px solid');
 		   if ($bord['s']) {
 			$table['border'] = _BORDER_ALL;
 			$table['border_details']['R'] = $bord;

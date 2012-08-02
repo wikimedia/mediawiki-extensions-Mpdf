@@ -13618,6 +13618,7 @@ function border_details($bd) {
 
 
 function _fix_borderStr($bd) {
+	preg_match_all('(\w+(?:\(.*?\))?)', $bd, $match, PREG_SET_ORDER);
 	$w = 'medium';
 	$c = '#000000';
 	$s = 'none';

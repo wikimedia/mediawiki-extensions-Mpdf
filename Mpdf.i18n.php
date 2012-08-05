@@ -36,6 +36,23 @@ $messages['de'] = array(
 	'mpdf-desc' => 'Ermöglicht die Ausgabe einer Seite als PDF-Datei',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'mpdf-action' => 'PDF-eksport',
+	'mpdf-log' => '$1 jo se ako PDF-dataja eksportěrował',
+	'mpdf-desc' => 'Konwertěrujo aktualny bok do PDF-dataje a sćelo ju do wobglědowaka',
+);
+
+/** French (français)
+ * @author Linedwell
+ */
+$messages['fr'] = array(
+	'mpdf-action' => 'Exporter en PDF',
+	'mpdf-log' => '$1 exporté au format PDF',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
@@ -43,6 +60,24 @@ $messages['gl'] = array(
 	'mpdf-action' => 'Exportación en PDF',
 	'mpdf-log' => '$1 exportado como PDF',
 	'mpdf-desc' => 'Converte a páxina actual nun PDF e mándalla ao navegador',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'mpdf-action' => 'PDF-eksport',
+	'mpdf-log' => '$1 bu jako PDF-dataja eksportowany',
+	'mpdf-desc' => 'Konwertuje aktualnu stronu do PDF-dataje a sćele ju do wobhladowaka',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'mpdf-action' => 'PDF-извоз',
+	'mpdf-log' => 'Извоз на $1 како PDF',
+	'mpdf-desc' => 'Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот',
 );
 
 /** Tagalog (Tagalog)

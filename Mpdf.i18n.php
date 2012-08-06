@@ -26,6 +26,15 @@ $messages['qqq'] = array(
 	'mpdf-log' => '$1 is the username of the user who exports the PDF book',
 );
 
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'mpdf-action' => 'Экспарт PDF',
+	'mpdf-log' => '«$1» экспартаваная ў PDF',
+	'mpdf-desc' => 'Канвэртуе бягучую старонку ў PDF і аддае яе браўзэру',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
@@ -78,6 +87,15 @@ $messages['mk'] = array(
 	'mpdf-action' => 'PDF-извоз',
 	'mpdf-log' => 'Извоз на $1 како PDF',
 	'mpdf-desc' => 'Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'mpdf-action' => 'PDF-export',
+	'mpdf-log' => '$1 is geëxporteerd als PDF',
+	'mpdf-desc' => 'Converteert de huidige pagina naar PDF en verzendt die naar de browser',
 );
 
 /** Tagalog (Tagalog)

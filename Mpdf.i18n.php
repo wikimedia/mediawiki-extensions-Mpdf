@@ -56,10 +56,12 @@ $messages['dsb'] = array(
 
 /** French (français)
  * @author Linedwell
+ * @author Wyz
  */
 $messages['fr'] = array(
 	'mpdf-action' => 'Exporter en PDF',
 	'mpdf-log' => '$1 exporté au format PDF',
+	'mpdf-desc' => "Convertit en PDF la page actuelle et l'envoie au navigateur",
 );
 
 /** Galician (galego)

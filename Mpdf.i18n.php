@@ -82,6 +82,15 @@ $messages['hsb'] = array(
 	'mpdf-desc' => 'Konwertuje aktualnu stronu do PDF-dataje a sćele ju do wobhladowaka',
 );
 
+/** Italian (italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'mpdf-action' => 'Esportazione in PDF',
+	'mpdf-log' => '$1 esportato in formato PDF',
+	'mpdf-desc' => 'Converte la pagina corrente in PDF e la invia al browser',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */

@@ -91,6 +91,15 @@ $messages['it'] = array(
 	'mpdf-desc' => 'Converte la pagina corrente in PDF e la invia al browser',
 );
 
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'mpdf-action' => 'PDF書き出し',
+	'mpdf-log' => '$1をPDFとしてエクスポート',
+	'mpdf-desc' => '現在のページをPDFに変換してブラウザーに送る',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */

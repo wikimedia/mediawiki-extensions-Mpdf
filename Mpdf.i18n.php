@@ -100,6 +100,15 @@ $messages['ja'] = array(
 	'mpdf-desc' => '現在のページをPDFに変換してブラウザーに送る',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'mpdf-action' => 'Pdf 내보내기',
+	'mpdf-log' => '$1 사용자가 PDF로 내보냄',
+	'mpdf-desc' => 'PDF로 현재 문서를 변환하고 브라우저로 보냄',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */

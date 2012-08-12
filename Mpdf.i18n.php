@@ -73,6 +73,15 @@ $messages['gl'] = array(
 	'mpdf-desc' => 'Converte a páxina actual nun PDF e mándalla ao navegador',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'mpdf-action' => 'יצוא PDF',
+	'mpdf-log' => '$1 יוּצא כ־PDF',
+	'mpdf-desc' => 'המרת הדף הנוכחי ל־PDF ושליחתו לדפדפן',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
@@ -125,6 +134,14 @@ $messages['nl'] = array(
 	'mpdf-action' => 'PDF-export',
 	'mpdf-log' => '$1 is geëxporteerd als PDF',
 	'mpdf-desc' => 'Converteert de huidige pagina naar PDF en verzendt die naar de browser',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'mpdf-action' => 'Pdf ஏற்றுமதி',
+	'mpdf-log' => '$1 PDF ஆக ஏற்றுமதி செய்யப்பட்டது',
 );
 
 /** Tagalog (Tagalog)

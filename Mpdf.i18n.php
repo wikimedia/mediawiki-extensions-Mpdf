@@ -127,6 +127,15 @@ $messages['mk'] = array(
 	'mpdf-desc' => 'Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'mpdf-action' => 'Esportazzjoni bil-PDF',
+	'mpdf-log' => "$1 esporta f'format PDF",
+	'mpdf-desc' => "Jikkonverti l-paġna attwali f'PDF u jibgħatha għall-browżer",
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

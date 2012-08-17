@@ -145,6 +145,15 @@ $messages['nl'] = array(
 	'mpdf-desc' => 'Converteert de huidige pagina naar PDF en verzendt die naar de browser',
 );
 
+/** Polish (polski)
+ * @author BeginaFelicysym
+ */
+$messages['pl'] = array(
+	'mpdf-action' => 'Eksport do Pdf',
+	'mpdf-log' => 'wyeksportowano $1 do formatu PDF',
+	'mpdf-desc' => 'Zamienia bieżącą stronę na PDF i przesyła do przeglądarki',
+);
+
 /** Tamil (தமிழ்)
  * @author Shanmugamp7
  */

@@ -35,6 +35,15 @@ $messages['be-tarask'] = array(
 	'mpdf-desc' => 'Канвэртуе бягучую старонку ў PDF і аддае яе браўзэру',
 );
 
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'mpdf-action' => 'Ezporzhiañ e PDF',
+	'mpdf-log' => '$1 bet ezporzhiet dindan ar furmad PDF',
+	'mpdf-desc' => "Amdreiñ e PDF ar bajenn red hag he c'has d'ar merdeer",
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64

@@ -63,6 +63,15 @@ $messages['dsb'] = array(
 	'mpdf-desc' => 'Konwertěrujo aktualny bok do PDF-dataje a sćelo ju do wobglědowaka',
 );
 
+/** Spanish (español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'mpdf-action' => 'Exportación en PDF',
+	'mpdf-log' => '$1 exportado como PDF',
+	'mpdf-desc' => 'Convierte la página actual en un archivo PDF y la envía al navegador',
+);
+
 /** French (français)
  * @author Linedwell
  * @author Wyz

@@ -172,6 +172,15 @@ $messages['pl'] = array(
 	'mpdf-desc' => 'Zamienia bieżącą stronę na PDF i przesyła do przeglądarki',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'mpdf-action' => 'Esportassion ëd PDF',
+	'mpdf-log' => '$1 esportà com un PDF',
+	'mpdf-desc' => 'A convert la pagina corenta an PDF e a a manda al navigador',
+);
+
 /** Tamil (தமிழ்)
  * @author Shanmugamp7
  */

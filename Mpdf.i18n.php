@@ -173,12 +173,13 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'mpdf-action' => 'Esportassion ëd PDF',
-	'mpdf-log' => '$1 esportà com un PDF',
-	'mpdf-desc' => 'A convert la pagina corenta an PDF e a a manda al navigador',
+	'mpdf-log' => '$1 esportà com PDF',
+	'mpdf-desc' => 'A convert la pàgina corenta an PDF e a la manda al navigador',
 );
 
 /** Tamil (தமிழ்)

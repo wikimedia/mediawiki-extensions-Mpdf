@@ -21,9 +21,12 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Lloffiwr
+ * @author Purodha
  */
 $messages['qqq'] = array(
+	'mpdf-action' => 'The title of the special page and the text of the link to it on [[Special:SpecialPages]]',
 	'mpdf-log' => '$1 is the username of the user who exports the PDF book',
+	'mpdf-desc' => '{{desc}}',
 );
 
 /** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
@@ -134,6 +137,15 @@ $messages['ko'] = array(
 	'mpdf-action' => 'Pdf 내보내기',
 	'mpdf-log' => '$1 사용자가 PDF로 내보냄',
 	'mpdf-desc' => 'PDF로 현재 문서를 변환하고 브라우저로 보냄',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'mpdf-action' => 'PDF-Äxpoot',
+	'mpdf-log' => '$1 als en PDF-Dattei expoteet',
+	'mpdf-desc' => 'Määd uß dä aktoölle Sigg en PDF-Dattei un scheck se aan dä Brauser.',
 );
 
 /** Macedonian (македонски)

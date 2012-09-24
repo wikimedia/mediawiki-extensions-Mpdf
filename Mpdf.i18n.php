@@ -148,6 +148,15 @@ $messages['ksh'] = array(
 	'mpdf-desc' => 'Määd uß dä aktoölle Sigg en PDF-Dattei un scheck se aan dä Brauser.',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'mpdf-action' => 'PDF-Export',
+	'mpdf-log' => '$1 huet et als PDF exportéiert',
+	'mpdf-desc' => 'Wandelt déi aktuell Säit an e PDF ëm a schéckt et op de Browser',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */

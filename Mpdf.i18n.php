@@ -219,4 +219,3 @@ $messages['tl'] = array(
 	'mpdf-log' => 'Iniluwas ang $1 bilang isang PDF',
 	'mpdf-desc' => 'Nagpapalit ng kasalukuyang pahinang upang maging PDF at ipinapadala sa pantingin-tingin',
 );
-

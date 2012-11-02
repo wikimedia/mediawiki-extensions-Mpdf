@@ -219,3 +219,12 @@ $messages['tl'] = array(
 	'mpdf-log' => 'Iniluwas ang $1 bilang isang PDF',
 	'mpdf-desc' => 'Nagpapalit ng kasalukuyang pahinang upang maging PDF at ipinapadala sa pantingin-tingin',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'mpdf-action' => 'PDF 导出',
+	'mpdf-log' => '$1 导出了一个 PDF',
+	'mpdf-desc' => '将当前网页转换为 PDF 并发送到浏览器',
+);

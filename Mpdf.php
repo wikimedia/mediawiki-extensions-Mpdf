@@ -19,11 +19,13 @@
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
 
-define( 'MPDF_VERSION', "0.1, 2012-07-03" );
+define( 'MPDF_VERSION', "0.2, 2012-11-12" );
 
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 $wgAutoloadClasses['MpdfHooks'] = $dir . '/Mpdf.hooks.php';
 $wgExtensionMessagesFiles['Mpdf'] = $dir . '/Mpdf.i18n.php';
+$wgExtensionMessagesFiles['MpdfMagic'] = $dir . '/Mpdf.i18n.magic.php';
+$wgHooks['ParserFirstCallInit'][] = 'mpdf_Setup';
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
@@ -43,3 +45,7 @@ $wgHooks['UnknownAction'][] = 'MpdfHooks::onUnknownAction';
 $wgHooks['SkinTemplateTabs'][] = 'MpdfHooks::onSkinTemplateTabs';
 $wgHooks['SkinTemplateNavigation'][] = 'MpdfHooks::onSkinTemplateNavigation';
 
+function mpdf_Setup( Parser $parser )	 {
+	$parser->setFunctionHook( 'mpdftags', 'MpdfHooks::mpdftags_Render' );
+	return true;
+}

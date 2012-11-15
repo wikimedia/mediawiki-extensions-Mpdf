@@ -82,4 +82,24 @@ class MpdfHooks {
 		}
 		return true;
 	}
+        
+        public static function mpdftags_Render( &$parser )
+        {
+            // Get the parameters that were passed to this function
+            $params = func_get_args();
+            array_shift( $params );
+
+            // Replace open and close tag for security reason
+            $params = str_replace(array('<', '>'), array('&lt;', '&gt;'), $params);
+            
+            // Insert mpdf tags between <!--mpdf ... mpdf-->
+            $ret = "<!--mpdf ";
+            foreach ($params as $value) {
+                $ret.="<".  $value ." />\n";
+            }
+            
+            //Return mpdf tags as raw html
+            return $parser->insertStripItem( $ret."mpdf-->\n", $parser->mStripState );
+            
+        }
 }

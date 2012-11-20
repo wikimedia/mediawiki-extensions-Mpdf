@@ -57,6 +57,13 @@ $messages['de'] = array(
 	'mpdf-desc' => 'Ermöglicht die Ausgabe einer Seite als PDF-Datei',
 );
 
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'mpdf-action' => "Pdf'i ateber de",
+);
+
 /** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */

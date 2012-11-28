@@ -82,6 +82,15 @@ $messages['es'] = array(
 	'mpdf-desc' => 'Convierte la página actual en un archivo PDF y la envía al navegador',
 );
 
+/** Finnish (suomi)
+ * @author Nedergard
+ */
+$messages['fi'] = array(
+	'mpdf-action' => 'PDF-vienti',
+	'mpdf-log' => '$1 viety PDF-muodossa',
+	'mpdf-desc' => 'Muuntaa nykyisen sivun PDF:ksi ja lähettää sen selaimelle',
+);
+
 /** French (français)
  * @author Linedwell
  * @author Wyz

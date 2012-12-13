@@ -29,6 +29,15 @@ $messages['qqq'] = array(
 	'mpdf-desc' => '{{desc}}',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'mpdf-action' => 'Esportación a PDF',
+	'mpdf-log' => '$1 esportáu como PDF',
+	'mpdf-desc' => 'Convierte la páxina actual a PDF y la unvia al navegador',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */

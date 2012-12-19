@@ -22,11 +22,12 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Lloffiwr
  * @author Purodha
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'mpdf-action' => 'The title of the special page and the text of the link to it on [[Special:SpecialPages]]',
 	'mpdf-log' => '$1 is the username of the user who exports the PDF book',
-	'mpdf-desc' => '{{desc}}',
+	'mpdf-desc' => '{{desc|name=Mpdf|url=http://www.mediawiki.org/wiki/Extension:Mpdf}}',
 );
 
 /** Asturian (asturianu)

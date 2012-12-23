@@ -145,6 +145,14 @@ $messages['hsb'] = array(
 	'mpdf-desc' => 'Konwertuje aktualnu stronu do PDF-dataje a sćele ju do wobhladowaka',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Farras
+ */
+$messages['id'] = array(
+	'mpdf-action' => 'Ekspor PDF',
+	'mpdf-log' => '$1 diekspor sebagai PDF',
+);
+
 /** Italian (italiano)
  * @author Darth Kule
  */
@@ -268,6 +276,15 @@ $messages['tl'] = array(
 	'mpdf-action' => 'Pagluluwas ng PDF',
 	'mpdf-log' => 'Iniluwas ang $1 bilang isang PDF',
 	'mpdf-desc' => 'Nagpapalit ng kasalukuyang pahinang upang maging PDF at ipinapadala sa pantingin-tingin',
+);
+
+/** Ukrainian (українська)
+ * @author Ата
+ */
+$messages['uk'] = array(
+	'mpdf-action' => 'Експорт у PDF',
+	'mpdf-log' => '{{GENDER:$1|експортував|експортувала}} у PDF',
+	'mpdf-desc' => 'Перетворює поточну сторінку на PDF і надсилає до браузера',
 );
 
 /** Simplified Chinese (中文（简体）‎)

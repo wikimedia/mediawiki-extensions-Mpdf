@@ -261,6 +261,15 @@ $messages['ro'] = array(
 	'mpdf-log' => '$1 a exportat ca PDF',
 );
 
+/** Russian (русский)
+ * @author Pastakhov
+ */
+$messages['ru'] = array(
+	'mpdf-action' => 'Экспорт в PDF',
+	'mpdf-log' => '$1 экспортировано в PDF',
+	'mpdf-desc' => 'Преобразует текущую страницу в PDF и отправляет браузеру',
+);
+
 /** Tamil (தமிழ்)
  * @author Shanmugamp7
  */

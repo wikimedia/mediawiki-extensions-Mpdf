@@ -92,6 +92,13 @@ $messages['es'] = array(
 	'mpdf-desc' => 'Convierte la página actual en un archivo PDF y la envía al navegador',
 );
 
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'mpdf-action' => 'PDF-i eksport',
+);
+
 /** Persian (فارسی)
  * @author Mjbmr
  */
@@ -268,6 +275,13 @@ $messages['ru'] = array(
 	'mpdf-action' => 'Экспорт в PDF',
 	'mpdf-log' => '$1 экспортировано в PDF',
 	'mpdf-desc' => 'Преобразует текущую страницу в PDF и отправляет браузеру',
+);
+
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'mpdf-log' => '$1 exporterad som PDF',
 );
 
 /** Tamil (தமிழ்)

@@ -277,6 +277,14 @@ $messages['ru'] = array(
 	'mpdf-desc' => 'Преобразует текущую страницу в PDF и отправляет браузеру',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'mpdf-action' => 'Pdf නිර්යාත කිරීම',
+	'mpdf-log' => '$1 PDF ලෙස නිර්යාත කරන ලදී',
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */

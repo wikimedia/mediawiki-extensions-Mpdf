@@ -125,6 +125,15 @@ $messages['fr'] = array(
 	'mpdf-desc' => "Convertit en PDF la page actuelle et l'envoie au navigateur",
 );
 
+/** Franco-Provençal (arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'mpdf-action' => 'Èxportar en PDF',
+	'mpdf-log' => '$1 at èxportâ coment PDF',
+	'mpdf-desc' => 'Convèrtét en PDF la pâge d’ora et pués la mande u navigator',
+);
+
 /** Galician (galego)
  * @author Toliño
  */

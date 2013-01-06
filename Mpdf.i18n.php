@@ -231,6 +231,15 @@ $messages['mk'] = array(
 	'mpdf-desc' => 'Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'mpdf-action' => 'Eksport PDF',
+	'mpdf-log' => '$1 mengeksport PDF',
+	'mpdf-desc' => 'Menukarkan halaman semasa kepad PDF dan menghantarnya ke pelayar',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  */

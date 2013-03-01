@@ -286,6 +286,15 @@ $messages['ro'] = array(
 	'mpdf-log' => '$1 a exportat ca PDF',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'mpdf-action' => "Esporte 'u PDF",
+	'mpdf-log' => "$1 esportate cumme 'nu PDF",
+	'mpdf-desc' => "converte 'a pàgena corrende jndr'à 'nu PDF e 'u manne a 'u browser",
+);
+
 /** Russian (русский)
  * @author Pastakhov
  */

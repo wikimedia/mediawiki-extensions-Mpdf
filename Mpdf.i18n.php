@@ -249,6 +249,14 @@ $messages['mt'] = array(
 	'mpdf-desc' => "Jikkonverti l-paġna attwali f'PDF u jibgħatha għall-browżer",
 );
 
+/** Norwegian Bokmål (norsk bokmål)
+ */
+$messages['nb'] = array(
+	'mpdf-action' => 'PDF-eksport',
+	'mpdf-log' => '$1 eksportert som PDF',
+	'mpdf-desc' => 'Konverterer nåværende side til PDF og sender den til nettleseren',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */

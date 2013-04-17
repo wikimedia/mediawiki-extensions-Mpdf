@@ -57,6 +57,15 @@ $messages['br'] = array(
 	'mpdf-desc' => "Amdreiñ e PDF ar bajenn red hag he c'has d'ar merdeer",
 );
 
+/** Czech (česky)
+ * @author Jezevec
+ */
+$messages['cs'] = array(
+	'mpdf-action' => 'Pdf Export',
+	'mpdf-log' => '$1 exportováno do PDF',
+	'mpdf-desc' => 'Převede aktuální stránku do PDF a pošle do prohlížeče',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64

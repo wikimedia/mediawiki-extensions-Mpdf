@@ -59,10 +59,11 @@ $messages['br'] = array(
 
 /** Czech (česky)
  * @author Jezevec
+ * @author Mormegil
  */
 $messages['cs'] = array(
-	'mpdf-action' => 'Pdf Export',
-	'mpdf-log' => '$1 exportováno do PDF',
+	'mpdf-action' => 'Exportovat do PDF',
+	'mpdf-log' => '$1 exportoval do PDF',
 	'mpdf-desc' => 'Převede aktuální stránku do PDF a pošle do prohlížeče',
 );
 

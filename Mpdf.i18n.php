@@ -14,7 +14,7 @@ $messages = array();
  * @author Aran Dunkley
  */
 $messages['en'] = array(
-	'mpdf-action' => 'Pdf Export',
+	'mpdf-action' => 'PDF Export',
 	'mpdf-log' => '$1 exported as a PDF',
 	'mpdf-desc' => 'Converts current page to PDF and sends to browser',
 );

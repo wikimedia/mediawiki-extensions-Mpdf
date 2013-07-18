@@ -271,9 +271,9 @@ $messages['nb'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'mpdf-action' => 'PDF-export',
-	'mpdf-log' => '$1 is geëxporteerd als PDF',
-	'mpdf-desc' => 'Converteert de huidige pagina naar PDF en verzendt die naar de browser',
+	'mpdf-action' => 'Pdfexport',
+	'mpdf-log' => '$1 is geëxporteerd als pdf',
+	'mpdf-desc' => 'Converteert de huidige pagina naar pdf en verzendt die naar de browser',
 );
 
 /** Polish (polski)

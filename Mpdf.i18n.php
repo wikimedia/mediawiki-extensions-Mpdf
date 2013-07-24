@@ -331,10 +331,13 @@ $messages['si'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
+	'mpdf-action' => 'PDF-export',
 	'mpdf-log' => '$1 exporterad som PDF',
+	'mpdf-desc' => 'Konverterar aktuell sida till PDF och skickar till webbläsaren',
 );
 
 /** Tamil (தமிழ்)

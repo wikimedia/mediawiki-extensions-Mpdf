@@ -211,7 +211,7 @@ $messages['ka'] = array(
 $messages['ko'] = array(
 	'mpdf-action' => 'Pdf 내보내기',
 	'mpdf-log' => '$1 사용자가 PDF로 내보냄',
-	'mpdf-desc' => 'PDF로 현재 문서를 변환하고 브라우저로 보냄',
+	'mpdf-desc' => 'PDF로 현재 문서를 변환하고 브라우저로 보냅니다',
 );
 
 /** Colognian (Ripoarisch)

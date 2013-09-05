@@ -26,7 +26,8 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'mpdf-action' => 'Used as link text',
-	'mpdf-log' => '$1 is the username of the user who exports the PDF book',
+	'mpdf-log' => 'Parameters:
+* $1 - the username of the user who exports the PDF book',
 	'mpdf-desc' => '{{desc|name=Mpdf|url=http://www.mediawiki.org/wiki/Extension:Mpdf}}',
 );
 

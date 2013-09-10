@@ -296,6 +296,15 @@ $messages['pms'] = array(
 	'mpdf-desc' => 'A convert la pàgina corenta an PDF e a la manda al navigador',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'mpdf-action' => 'Exportar como PDF',
+	'mpdf-log' => '$1 exportado como PDF',
+	'mpdf-desc' => 'Converte página atual em PDF e envia ao navegador',
+);
+
 /** Romanian (română)
  * @author Firilacroco
  * @author Minisarm

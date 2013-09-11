@@ -45,7 +45,7 @@ $wgHooks['UnknownAction'][] = 'MpdfHooks::onUnknownAction';
 $wgHooks['SkinTemplateTabs'][] = 'MpdfHooks::onSkinTemplateTabs';
 $wgHooks['SkinTemplateNavigation'][] = 'MpdfHooks::onSkinTemplateNavigation';
 
-function mpdf_Setup( Parser $parser )	 {
+function mpdf_Setup( Parser $parser ) {
 	$parser->setFunctionHook( 'mpdftags', 'MpdfHooks::mpdftags_Render' );
 	return true;
 }

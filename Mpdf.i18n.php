@@ -58,7 +58,7 @@ $messages['br'] = array(
 	'mpdf-desc' => "Amdreiñ e PDF ar bajenn red hag he c'has d'ar merdeer",
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Jezevec
  * @author Mormegil
  */

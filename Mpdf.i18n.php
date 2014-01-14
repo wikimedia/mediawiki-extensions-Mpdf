@@ -111,10 +111,13 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Mjbmr
  */
 $messages['fa'] = array(
 	'mpdf-action' => 'خروجی پی‌دی‌اف',
+	'mpdf-log' => '$1 به عنوان یک پی‌دی‌اف صادر شده',
+	'mpdf-desc' => 'تبدیل صفحهٔ فعلی به پی‌دی‌اف و فرستادن به مرورگر',
 );
 
 /** Finnish (suomi)

@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Firilacroco",
+            "Minisarm"
+        ]
+    },
+    "mpdf-action": "Exportare ca PDF",
+    "mpdf-log": "$1 a exportat ca PDF"
+}

@@ -10,7 +10,7 @@
  * Based by PdfBook extension [http://www.mediawiki.org/Extension:PdfBook],
  * 		author Aran Dunkley [http://www.organicdesign.co.nz/nad User:Nad],
  * 		licence GNU General Public Licence 2.0 or later
- * 
+ *
  * @file
  * @ingroup Extensions
  * @author Aran Dunkley [http://www.organicdesign.co.nz/nad User:Nad], Pavel Astakhov
@@ -19,10 +19,11 @@
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
 
-define( 'MPDF_VERSION', "0.2, 2012-11-12" );
+define( 'MPDF_VERSION', "0.3.0, 2014-04-01" );
 
 $dir = __DIR__;
 $wgAutoloadClasses['MpdfHooks'] = $dir . '/Mpdf.hooks.php';
+$wgMessagesDirs['Mpdf'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Mpdf'] = $dir . '/Mpdf.i18n.php';
 $wgExtensionMessagesFiles['MpdfMagic'] = $dir . '/Mpdf.i18n.magic.php';
 $wgHooks['ParserFirstCallInit'][] = 'mpdf_Setup';
@@ -35,7 +36,6 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version'        => MPDF_VERSION,
 	'descriptionmsg' => 'mpdf-desc',
 );
-
 
 $wgMpdfTab = false; # Whether or not an action tab is wanted for printing to PDF
 

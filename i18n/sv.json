@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Jopparn",
+            "WikiPhoenix"
+        ]
+    },
+    "mpdf-action": "PDF-export",
+    "mpdf-log": "$1 exporterad som PDF",
+    "mpdf-desc": "Konverterar aktuell sida till PDF och skickar till webbläsaren"
+}

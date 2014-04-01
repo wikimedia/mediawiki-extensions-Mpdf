@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Michawiki"
+        ]
+    },
+    "mpdf-action": "PDF-eksport",
+    "mpdf-log": "$1 jo se ako PDF-dataja eksportěrował",
+    "mpdf-desc": "Konwertěrujo aktualny bok do PDF-dataje a sćelo ju do wobglědowaka"
+}

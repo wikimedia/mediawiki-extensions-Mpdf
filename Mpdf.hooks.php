@@ -21,6 +21,7 @@ class MpdfHooks {
 
 			$options = $article->getParserOptions();
 			$options->setIsPrintable( true );
+			$options->setEditSection( false );
 			$article->mParserOptions = $options;
 			$article->view();
 			$html = $article->getContext()->getOutput()->getHTML();

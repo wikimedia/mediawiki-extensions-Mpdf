@@ -18,17 +18,12 @@ class MpdfHooks {
 			$title = $article->getTitle();
 			$titletext = $title->getPrefixedText();
 			$filename = str_replace( array('\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r" ), '_', $titletext );
-			$text = $article->fetchContent();
 
-			$wgOut->setPrintable();
-
-			$wgOut->addWikiText( $text );
-			$wgOut->setHTMLTitle( $titletext );
-
-			ob_start();
-			$wgOut->output();
-			$html=ob_get_contents();
-			ob_end_clean();
+			$options = $article->getParserOptions();
+			$options->setIsPrintable( true );
+			$article->mParserOptions = $options;
+			$article->view();
+			$html = $article->getContext()->getOutput()->getHTML();
 
 			// Initialise PDF variables
 			$format  = $wgRequest->getText( 'format' );

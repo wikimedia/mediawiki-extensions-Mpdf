@@ -19,7 +19,7 @@
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
 
-define( 'MPDF_VERSION', "0.3.0, 2014-04-01" );
+define( 'MPDF_VERSION', "0.4.0, 2014-04-08" );
 
 $dir = __DIR__;
 $wgAutoloadClasses['MpdfHooks'] = $dir . '/Mpdf.hooks.php';

@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Siebrand"
-        ]
-    },
-    "mpdf-action": "Pdfexport",
-    "mpdf-log": "$1 is geëxporteerd als pdf",
-    "mpdf-desc": "Converteert de huidige pagina naar pdf en verzendt die naar de browser"
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"mpdf-action": "Pdfexport",
+	"mpdf-log": "$1 is geëxporteerd als pdf",
+	"mpdf-desc": "Converteert de huidige pagina naar pdf en verzendt die naar de browser"
 }

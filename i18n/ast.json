@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xuacu"
-        ]
-    },
-    "mpdf-action": "Esportación a PDF",
-    "mpdf-log": "$1 esportáu como PDF",
-    "mpdf-desc": "Convierte la páxina actual a PDF y la unvia al navegador"
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"mpdf-action": "Esportación a PDF",
+	"mpdf-log": "$1 esportáu como PDF",
+	"mpdf-desc": "Convierte la páxina actual a PDF y la unvia al navegador"
 }

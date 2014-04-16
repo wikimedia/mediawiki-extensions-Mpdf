@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "David1010"
-        ]
-    },
-    "mpdf-action": "PDF-ის ექსპორტი",
-    "mpdf-log": "$1 ექსპორტირებულია როგორც PDF"
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"mpdf-action": "PDF-ის ექსპორტი",
+	"mpdf-log": "$1 ექსპორტირებულია როგორც PDF"
 }

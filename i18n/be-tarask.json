@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Wizardist"
-        ]
-    },
-    "mpdf-action": "Экспарт PDF",
-    "mpdf-log": "«$1» экспартаваная ў PDF",
-    "mpdf-desc": "Канвэртуе бягучую старонку ў PDF і аддае яе браўзэру"
+	"@metadata": {
+		"authors": [
+			"Wizardist"
+		]
+	},
+	"mpdf-action": "Экспарт PDF",
+	"mpdf-log": "«$1» экспартаваная ў PDF",
+	"mpdf-desc": "Канвэртуе бягучую старонку ў PDF і аддае яе браўзэру"
 }

@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kghbln",
-            "Metalhead64"
-        ]
-    },
-    "mpdf-action": "PDF-Export",
-    "mpdf-log": "$1 wurde als PDF-Datei exportiert",
-    "mpdf-desc": "Ermöglicht die Ausgabe einer Seite als PDF-Datei"
+	"@metadata": {
+		"authors": [
+			"Kghbln",
+			"Metalhead64"
+		]
+	},
+	"mpdf-action": "PDF-Export",
+	"mpdf-log": "$1 wurde als PDF-Datei exportiert",
+	"mpdf-desc": "Ermöglicht die Ausgabe einer Seite als PDF-Datei"
 }

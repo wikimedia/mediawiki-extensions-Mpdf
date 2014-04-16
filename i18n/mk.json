@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "mpdf-action": "PDF-извоз",
-    "mpdf-log": "Извоз на $1 како PDF",
-    "mpdf-desc": "Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"mpdf-action": "PDF-извоз",
+	"mpdf-log": "Извоз на $1 како PDF",
+	"mpdf-desc": "Ја претвора тековната страница во PDF и му ја испраќа на прелистувачот"
 }

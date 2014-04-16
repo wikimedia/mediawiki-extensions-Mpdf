@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Yfdyh000"
-        ]
-    },
-    "mpdf-action": "PDF 导出",
-    "mpdf-log": "$1 导出了一个 PDF",
-    "mpdf-desc": "将当前网页转换为 PDF 并发送到浏览器"
+	"@metadata": {
+		"authors": [
+			"Yfdyh000"
+		]
+	},
+	"mpdf-action": "PDF 导出",
+	"mpdf-log": "$1 导出了一个 PDF",
+	"mpdf-desc": "将当前网页转换为 PDF 并发送到浏览器"
 }

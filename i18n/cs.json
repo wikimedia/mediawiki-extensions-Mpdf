@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Jezevec",
-            "Mormegil"
-        ]
-    },
-    "mpdf-action": "Exportovat do PDF",
-    "mpdf-log": "$1 exportoval do PDF",
-    "mpdf-desc": "Převede aktuální stránku do PDF a pošle do prohlížeče"
+	"@metadata": {
+		"authors": [
+			"Jezevec",
+			"Mormegil"
+		]
+	},
+	"mpdf-action": "Exportovat do PDF",
+	"mpdf-log": "$1 exportoval do PDF",
+	"mpdf-desc": "Převede aktuální stránku do PDF a pošle do prohlížeče"
 }

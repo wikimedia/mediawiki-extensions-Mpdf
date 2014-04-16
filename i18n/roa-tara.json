@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joetaras"
-        ]
-    },
-    "mpdf-action": "Esporte 'u PDF",
-    "mpdf-log": "$1 esportate cumme 'nu PDF",
-    "mpdf-desc": "converte 'a pàgena corrende jndr'à 'nu PDF e 'u manne a 'u browser"
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"mpdf-action": "Esporte 'u PDF",
+	"mpdf-log": "$1 esportate cumme 'nu PDF",
+	"mpdf-desc": "converte 'a pàgena corrende jndr'à 'nu PDF e 'u manne a 'u browser"
 }

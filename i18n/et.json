@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Avjoska"
-        ]
-    },
-    "mpdf-action": "PDF-i eksport"
+	"@metadata": {
+		"authors": [
+			"Avjoska"
+		]
+	},
+	"mpdf-action": "PDF-i eksport"
 }

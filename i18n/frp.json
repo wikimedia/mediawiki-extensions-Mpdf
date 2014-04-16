@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "ChrisPtDe"
-        ]
-    },
-    "mpdf-action": "Èxportar en PDF",
-    "mpdf-log": "$1 at èxportâ coment PDF",
-    "mpdf-desc": "Convèrtét en PDF la pâge d’ora et pués la mande u navigator"
+	"@metadata": {
+		"authors": [
+			"ChrisPtDe"
+		]
+	},
+	"mpdf-action": "Èxportar en PDF",
+	"mpdf-log": "$1 at èxportâ coment PDF",
+	"mpdf-desc": "Convèrtét en PDF la pâge d’ora et pués la mande u navigator"
 }

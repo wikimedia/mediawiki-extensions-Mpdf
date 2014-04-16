@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shanmugamp7"
-        ]
-    },
-    "mpdf-action": "Pdf ஏற்றுமதி",
-    "mpdf-log": "$1 PDF ஆக ஏற்றுமதி செய்யப்பட்டது"
+	"@metadata": {
+		"authors": [
+			"Shanmugamp7"
+		]
+	},
+	"mpdf-action": "Pdf ஏற்றுமதி",
+	"mpdf-log": "$1 PDF ஆக ஏற்றுமதி செய்யப்பட்டது"
 }

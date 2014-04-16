@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Darth Kule"
-        ]
-    },
-    "mpdf-action": "Esportazione in PDF",
-    "mpdf-log": "$1 esportato in formato PDF",
-    "mpdf-desc": "Converte la pagina corrente in PDF e la invia al browser"
+	"@metadata": {
+		"authors": [
+			"Darth Kule"
+		]
+	},
+	"mpdf-action": "Esportazione in PDF",
+	"mpdf-log": "$1 esportato in formato PDF",
+	"mpdf-desc": "Converte la pagina corrente in PDF e la invia al browser"
 }

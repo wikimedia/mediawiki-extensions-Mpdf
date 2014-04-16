@@ -1,8 +1,6 @@
 {
-    "@metadata": {
-        "authors": []
-    },
-    "mpdf-action": "PDF-eksport",
-    "mpdf-log": "$1 eksportert som PDF",
-    "mpdf-desc": "Konverterer nåværende side til PDF og sender den til nettleseren"
+	"@metadata": [],
+	"mpdf-action": "PDF-eksport",
+	"mpdf-log": "$1 eksportert som PDF",
+	"mpdf-desc": "Konverterer nåværende side til PDF og sender den til nettleseren"
 }

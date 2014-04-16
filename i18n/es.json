@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Armando-Martin"
-        ]
-    },
-    "mpdf-action": "Exportación en PDF",
-    "mpdf-log": "$1 exportado como PDF",
-    "mpdf-desc": "Convierte la página actual en un archivo PDF y la envía al navegador"
+	"@metadata": {
+		"authors": [
+			"Armando-Martin"
+		]
+	},
+	"mpdf-action": "Exportación en PDF",
+	"mpdf-log": "$1 exportado como PDF",
+	"mpdf-desc": "Convierte la página actual en un archivo PDF y la envía al navegador"
 }

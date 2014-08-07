@@ -19,13 +19,13 @@
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
 
-define( 'MPDF_VERSION', "0.4.1, 2014-04-08" );
+define( 'MPDF_VERSION', "0.4.2, 2014-08-07" );
 
-$dir = __DIR__;
-$wgAutoloadClasses['MpdfHooks'] = $dir . '/Mpdf.hooks.php';
-$wgMessagesDirs['Mpdf'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['Mpdf'] = $dir . '/Mpdf.i18n.php';
-$wgExtensionMessagesFiles['MpdfMagic'] = $dir . '/Mpdf.i18n.magic.php';
+$wgAutoloadClasses['MpdfHooks'] =			__DIR__ . '/Mpdf.hooks.php';
+$wgAutoloadClasses['mPDF'] =				__DIR__ . '/mpdf/mpdf.php';
+$wgMessagesDirs['Mpdf'] =					__DIR__ . '/i18n';
+$wgExtensionMessagesFiles['Mpdf'] =			__DIR__ . '/Mpdf.i18n.php';
+$wgExtensionMessagesFiles['MpdfMagic'] =	__DIR__ . '/Mpdf.i18n.magic.php';
 $wgHooks['ParserFirstCallInit'][] = 'mpdf_Setup';
 
 $wgExtensionCredits['parserhook'][] = array(
@@ -39,7 +39,7 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgMpdfTab = false; # Whether or not an action tab is wanted for printing to PDF
 
-$wgHooks['UnknownAction'][] = 'MpdfHooks::onUnknownAction';
+$wgHooks['MediaWikiPerformAction'][] = 'MpdfHooks::onMediaWikiPerformAction';
 
 # Hooks for pre-Vector and Vector addtabs.
 $wgHooks['SkinTemplateTabs'][] = 'MpdfHooks::onSkinTemplateTabs';

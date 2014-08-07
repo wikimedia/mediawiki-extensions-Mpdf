@@ -3,19 +3,19 @@
 class MpdfHooks {
 
 	/**
-	 * Perform the export operation
 	 *
-	 * @param $action
+	 * @param OutputPage $output
 	 * @param Article $article
-	 *
-	 * @return bool
+	 * @param Title $title
+	 * @param User $user
+	 * @param WebRequest $request
+	 * @param MediaWiki $wiki
+	 * @return boolean
 	 */
-	public static function onUnknownAction( $action, $article ) {
-		global $wgOut, $wgRequest;
+	public static function onMediaWikiPerformAction( $output, $article, $title, $user, $request, $wiki ) {
 
-		if( $action == 'mpdf' ) {
+		if( $request->getText( 'action' ) == 'mpdf' ) {
 
-			$title = $article->getTitle();
 			$titletext = $title->getPrefixedText();
 			$filename = str_replace( array('\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r" ), '_', $titletext );
 
@@ -27,22 +27,22 @@ class MpdfHooks {
 			$html = $article->getContext()->getOutput()->getHTML();
 
 			// Initialise PDF variables
-			$format  = $wgRequest->getText( 'format' );
+			$format  = $request->getText( 'format' );
 
 			// If format=html in query-string, return html content directly
 			if( $format == 'html' ) {
-				$wgOut->disable();
+				$output->disable();
 				header( "Content-Type: text/html" );
 				header( "Content-Disposition: attachment; filename=\"$filename.html\"" );
 				print $html;
 			}
 			else { //return pdf file
-				include("mpdf/mpdf.php");
 				$mpdf=new mPDF(); 
 
 				$mpdf->WriteHTML( $html );
 				$mpdf->Output( $filename.'.pdf', 'D' );
 			}
+			$output->disable();
 			return false;
 		}
 
@@ -84,7 +84,7 @@ class MpdfHooks {
 		if ( $wgMpdfTab ) {
 			$actions['views']['mpdf'] = array(
 				'class' => false,
-				'text' => wfMsg( 'mpdf-action' ),
+				'text' => wfMessage( 'mpdf-action' )->text(),
 				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
 			);
 		}
@@ -104,7 +104,7 @@ class MpdfHooks {
 		$params = str_replace(array('<', '>'), array('&lt;', '&gt;'), $params);
 
 		// Insert mpdf tags between <!--mpdf ... mpdf-->
-		$ret = "<!--mpdf ";
+		$ret = '<!--mpdf';
 		foreach ($params as $value) {
 			$ret.="<".  $value ." />\n";
 		}

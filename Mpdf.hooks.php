@@ -37,7 +37,45 @@ class MpdfHooks {
 				print $html;
 			}
 			else { //return pdf file
-				$mpdf=new mPDF(); 
+				$mode = 'utf-8';
+				$format = 'A4';
+				$marginLeft = 15;
+				$marginRight = 15;
+				$marginTop = 16;
+				$marginBottom = 16;
+				$marginHeader = 9;
+				$marginFooter = 9;
+				$orientation = 'P';
+				list( ,$constr ) = explode('<!--mpdf<constructor', $html, 2 );
+				if ( $constr ) {
+					list( $constr ) = explode( '/>', $constr, 1 );
+					$matches = array();
+					if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr, $matches ) ){
+						$format = $matches[1];
+					}
+					if ( preg_match( '/margin-left\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginLeft = (float)$matches[1];
+					}
+					if ( preg_match( '/margin-right\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginRight = (float)$matches[1];
+					}
+					if ( preg_match( '/margin-top\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginTop = (float)$matches[1];
+					}
+					if ( preg_match( '/margin-bottom\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginBottom = (float)$matches[1];
+					}
+					if ( preg_match( '/margin-header\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginHeader = (float)$matches[1];
+					}
+					if ( preg_match( '/margin-footer\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+						$marginFooter = (float)$matches[1];
+					}
+					if ( preg_match( '/orientation\s*=\s*"(.*?)"/', $constr, $matches ) ){
+						$orientation = $matches[1];
+					}
+				}
+				$mpdf=new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
 
 				$mpdf->WriteHTML( $html );
 				$mpdf->Output( $filename.'.pdf', 'D' );

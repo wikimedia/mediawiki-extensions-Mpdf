@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "Exportación en PDF",
-	"mpdf-log": "$1 exportado como PDF",
 	"mpdf-desc": "Converte a páxina actual nun PDF e mándalla ao navegador"
 }

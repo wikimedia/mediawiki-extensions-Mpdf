@@ -4,6 +4,5 @@
 			"Farras"
 		]
 	},
-	"mpdf-action": "Ekspor PDF",
-	"mpdf-log": "$1 diekspor sebagai PDF"
+	"mpdf-action": "Ekspor PDF"
 }

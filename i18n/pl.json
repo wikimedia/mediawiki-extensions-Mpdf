@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "Eksport do Pdf",
-	"mpdf-log": "wyeksportowano $1 do formatu PDF",
 	"mpdf-desc": "Zamienia bieżącą stronę na PDF i przesyła do przeglądarki"
 }

@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "PDF-eksport",
-	"mpdf-log": "$1 bu jako PDF-dataja eksportowany",
 	"mpdf-desc": "Konwertuje aktualnu stronu do PDF-dataje a sćele ju do wobhladowaka"
 }

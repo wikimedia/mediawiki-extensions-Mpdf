@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "PDF-vienti",
-	"mpdf-log": "$1 viety PDF-muodossa",
 	"mpdf-desc": "Muuntaa nykyisen sivun PDF:ksi ja lähettää sen selaimelle"
 }

@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "PDF-Export",
-	"mpdf-log": "$1 huet et als PDF exportéiert",
 	"mpdf-desc": "Wandelt déi aktuell Säit an e PDF ëm a schéckt et op de Browser"
 }

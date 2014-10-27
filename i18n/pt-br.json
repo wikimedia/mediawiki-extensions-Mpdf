@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "Exportar como PDF",
-	"mpdf-log": "$1 exportado como PDF",
 	"mpdf-desc": "Converte página atual em PDF e envia ao navegador"
 }

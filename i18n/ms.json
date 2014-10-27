@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "Eksport PDF",
-	"mpdf-log": "$1 mengeksport PDF",
 	"mpdf-desc": "Menukarkan halaman semasa kepad PDF dan menghantarnya ke pelayar"
 }

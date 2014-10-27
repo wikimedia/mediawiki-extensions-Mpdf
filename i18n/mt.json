@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "Esportazzjoni bil-PDF",
-	"mpdf-log": "$1 esporta f'format PDF",
 	"mpdf-desc": "Jikkonverti l-paġna attwali f'PDF u jibgħatha għall-browżer"
 }

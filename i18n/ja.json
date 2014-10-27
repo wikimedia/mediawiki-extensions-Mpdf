@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "PDF書き出し",
-	"mpdf-log": "$1をPDFとしてエクスポート",
 	"mpdf-desc": "現在のページをPDFに変換してブラウザーに送る"
 }

@@ -5,6 +5,5 @@
 		]
 	},
 	"mpdf-action": "יצוא PDF",
-	"mpdf-log": "$1 יוּצא כ־PDF",
 	"mpdf-desc": "המרת הדף הנוכחי ל־PDF ושליחתו לדפדפן"
 }

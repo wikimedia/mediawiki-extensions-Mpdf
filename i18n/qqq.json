@@ -3,9 +3,10 @@
 		"authors": [
 			"Lloffiwr",
 			"Purodha",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
 	"mpdf-action": "Used as link text",
-	"mpdf-desc": "{{desc|name=Mpdf|url=http://www.mediawiki.org/wiki/Extension:Mpdf}}"
+	"mpdf-desc": "{{desc|name=Mpdf|url=https://www.mediawiki.org/wiki/Extension:Mpdf}}"
 }

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fwolff"
+		]
+	},
+	"mpdf-action": "PDF-uitvoer",
+	"mpdf-desc": "Skakel die huidige bladsy om na PDF en stuur na die blaaier"
+}

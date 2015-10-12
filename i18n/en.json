@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Aran Dunkley"
-        ]
-    },
-    "mpdf-action": "PDF Export",
-    "mpdf-desc": "Converts current page to PDF and sends to browser"
+	"@metadata": {
+		"authors": [
+			"Aran Dunkley"
+		]
+	},
+	"mpdf-action": "PDF Export",
+	"mpdf-desc": "Converts current page to PDF and sends to browser"
 }

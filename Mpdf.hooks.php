@@ -17,14 +17,13 @@ class MpdfHooks {
 		if( $request->getText( 'action' ) == 'mpdf' ) {
 
 			$titletext = $title->getPrefixedText();
-			$filename = str_replace( array('\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r" ), '_', $titletext );
+			$filename = str_replace( array('\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r", "\0" ), '_', $titletext );
 
-			$options = $article->getParserOptions();
-			$options->setIsPrintable( true );
-			$options->setEditSection( false );
-			$article->mParserOptions = $options;
+			$output->setPrintable();
 			$article->view();
-			$html = $article->getContext()->getOutput()->getHTML();
+			ob_start();
+			$output->output();
+			$html = ob_get_clean();
 
 			// Initialise PDF variables
 			$format  = $request->getText( 'format' );
@@ -46,32 +45,32 @@ class MpdfHooks {
 				$marginHeader = 9;
 				$marginFooter = 9;
 				$orientation = 'P';
-				list( ,$constr ) = explode('<!--mpdf<constructor', $html, 2 );
-				if ( $constr ) {
-					list( $constr ) = explode( '/>', $constr, 1 );
+				$constr1 = explode('<!--mpdf<constructor', $html, 2 );
+				if ( isset( $constr1[1] ) ) {
+					list( $constr2 ) = explode( '/>', $constr1, 1 );
 					$matches = array();
-					if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr, $matches ) ){
+					if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr2, $matches ) ){
 						$format = $matches[1];
 					}
-					if ( preg_match( '/margin-left\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-left\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginLeft = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-right\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-right\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginRight = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-top\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-top\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginTop = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-bottom\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-bottom\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginBottom = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-header\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-header\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginHeader = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-footer\s*=\s*"?([0-9\.]+)/', $constr, $matches ) ){
+					if ( preg_match( '/margin-footer\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
 						$marginFooter = (float)$matches[1];
 					}
-					if ( preg_match( '/orientation\s*=\s*"(.*?)"/', $constr, $matches ) ){
+					if ( preg_match( '/orientation\s*=\s*"(.*?)"/', $constr2, $matches ) ){
 						$orientation = $matches[1];
 					}
 				}
@@ -139,15 +138,17 @@ class MpdfHooks {
 		array_shift( $params );
 
 		// Replace open and close tag for security reason
-		$params = str_replace(array('<', '>'), array('&lt;', '&gt;'), $params);
+		$values = str_replace( array('<', '>'), array('&lt;', '&gt;'), $params );
 
 		// Insert mpdf tags between <!--mpdf ... mpdf-->
-		$ret = '<!--mpdf';
-		foreach ($params as $value) {
-			$ret.="<".  $value ." />\n";
+		$return = '<!--mpdf';
+		foreach ( $values as $val ) {
+			$return.="<".  $val ." />\n";
 		}
+		$return .= "mpdf-->\n";
 
 		//Return mpdf tags as raw html
-		return $parser->insertStripItem( $ret."mpdf-->\n", $parser->mStripState );
+		return $parser->insertStripItem( $return, $parser->mStripState );
 	}
+
 }

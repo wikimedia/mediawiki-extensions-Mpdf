@@ -19,14 +19,13 @@
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
 
-define( 'MPDF_VERSION', "0.5.0, 2014-09-30" );
+const MPDF_VERSION = '0.6.0, 2015-10-14';
 
 $wgAutoloadClasses['MpdfHooks'] =			__DIR__ . '/Mpdf.hooks.php';
 $wgAutoloadClasses['mPDF'] =				__DIR__ . '/mpdf/mpdf.php';
 $wgMessagesDirs['Mpdf'] =					__DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Mpdf'] =			__DIR__ . '/Mpdf.i18n.php';
 $wgExtensionMessagesFiles['MpdfMagic'] =	__DIR__ . '/Mpdf.i18n.magic.php';
-$wgHooks['ParserFirstCallInit'][] = 'mpdf_Setup';
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
@@ -44,8 +43,7 @@ $wgHooks['MediaWikiPerformAction'][] = 'MpdfHooks::onMediaWikiPerformAction';
 # Hooks for pre-Vector and Vector addtabs.
 $wgHooks['SkinTemplateTabs'][] = 'MpdfHooks::onSkinTemplateTabs';
 $wgHooks['SkinTemplateNavigation'][] = 'MpdfHooks::onSkinTemplateNavigation';
-
-function mpdf_Setup( Parser $parser ) {
+$wgHooks['ParserFirstCallInit'][] = function( Parser &$parser ) {
 	$parser->setFunctionHook( 'mpdftags', 'MpdfHooks::mpdftags_Render' );
 	return true;
-}
+};

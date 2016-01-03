@@ -100,7 +100,7 @@ class MpdfHooks {
 		if ( $wgMpdfTab ) {
 			$actions['mpdf'] = array(
 				'class' => false,
-				'text' => wfMsg( 'mpdf-action' ),
+				'text' => wfMessage( 'mpdf-action' )->text(),
 				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
 			);
 		}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"mpdf-action": "Exportação para formato PDF",
+	"mpdf-desc": "Converte a página atual num PDF e envia-o para o ''browser''."
+}

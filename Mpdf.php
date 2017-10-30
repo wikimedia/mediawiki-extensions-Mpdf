@@ -24,7 +24,6 @@ const MPDF_VERSION = '0.6.0, 2015-10-14';
 $wgAutoloadClasses['MpdfHooks'] =			__DIR__ . '/Mpdf.hooks.php';
 $wgAutoloadClasses['mPDF'] =				__DIR__ . '/mpdf/mpdf.php';
 $wgMessagesDirs['Mpdf'] =					__DIR__ . '/i18n';
-$wgExtensionMessagesFiles['Mpdf'] =			__DIR__ . '/Mpdf.i18n.php';
 $wgExtensionMessagesFiles['MpdfMagic'] =	__DIR__ . '/Mpdf.i18n.magic.php';
 
 $wgExtensionCredits['parserhook'][] = array(

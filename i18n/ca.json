@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"mpdf-action": "Exportació a PDF",
+	"mpdf-desc": "Converteix la pàgina actual en PDF i la envia al navegador"
+}

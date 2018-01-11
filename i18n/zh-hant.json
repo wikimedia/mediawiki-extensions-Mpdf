@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"mpdf-action": "PDF 匯出",
+	"mpdf-desc": "將目前頁面轉換成 PDF 並發送到瀏覽器上"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "Mpdf",
+	"version": "0.9",
+	"author": "[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]",
+	"url": "https://www.mediawiki.org/wiki/Extension:Mpdf",
+	"descriptionmsg": "mpdf-desc",
+	"license-name": "GPL-2.0+",
+	"requires": {
+		"MediaWiki": ">= 1.25.0"
+	},
+	"MessagesDirs": {
+		"Mpdf": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"MpdfMagic": "Mpdf.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"MpdfHooks": "Mpdf.hooks.php"
+	},
+	"Hooks": {
+		"MediaWikiPerformAction": "MpdfHooks::onMediaWikiPerformAction",
+		"ParserFirstCallInit": "MpdfHooks::onParserFirstCallInit",
+		"SkinTemplateNavigation": "MpdfHooks::onSkinTemplateNavigation",
+		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs"
+	},
+	"config": {
+		"MpdfTab": false
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 1
+}
+

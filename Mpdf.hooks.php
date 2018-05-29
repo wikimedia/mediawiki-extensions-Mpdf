@@ -2,6 +2,11 @@
 
 class MpdfHooks {
 
+	public static function onParserFirstCallInit( Parser &$parser ) {
+		$parser->setFunctionHook( 'mpdftags', 'MpdfHooks::mpdftags_Render' );
+		return true;
+	}
+
 	/**
 	 *
 	 * @param OutputPage $output

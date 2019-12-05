@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"mpdf-action": "PDF İhracat",
+	"mpdf-desc": "Geçerli sayfayı PDF'ye dönüştürür ve tarayıcıya gönderir"
+}

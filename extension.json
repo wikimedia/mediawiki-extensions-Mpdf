@@ -17,7 +17,7 @@
 		"MpdfMagic": "Mpdf.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"MpdfHooks": "Mpdf.hooks.php"
+		"MpdfHooks": "MpdfHooks.php"
 	},
 	"Hooks": {
 		"MediaWikiPerformAction": "MpdfHooks::onMediaWikiPerformAction",

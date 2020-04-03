@@ -2,9 +2,11 @@
 
 class MpdfHooks {
 
+	/**
+	 * @param Parser &$parser
+	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setFunctionHook( 'mpdftags', 'MpdfHooks::mpdftags_Render' );
-		return true;
 	}
 
 	/**
@@ -15,14 +17,13 @@ class MpdfHooks {
 	 * @param User $user
 	 * @param WebRequest $request
 	 * @param MediaWiki $wiki
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onMediaWikiPerformAction( $output, $article, $title, $user, $request, $wiki ) {
-
-		if( $request->getText( 'action' ) == 'mpdf' ) {
+		if ( $request->getText( 'action' ) == 'mpdf' ) {
 
 			$titletext = $title->getPrefixedText();
-			$filename = str_replace( array('\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r", "\0" ), '_', $titletext );
+			$filename = str_replace( [ '\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r", "\0" ], '_', $titletext );
 
 			$output->setPrintable();
 			$article->view();
@@ -31,16 +32,16 @@ class MpdfHooks {
 			$html = ob_get_clean();
 
 			// Initialise PDF variables
-			$format  = $request->getText( 'format' );
+			$format = $request->getText( 'format' );
 
 			// If format=html in query-string, return html content directly
-			if( $format == 'html' ) {
+			if ( $format == 'html' ) {
 				$output->disable();
 				header( "Content-Type: text/html" );
 				header( "Content-Disposition: attachment; filename=\"$filename.html\"" );
 				print $html;
-			}
-			else { //return pdf file
+			} else {
+				// return pdf file
 				$mode = 'utf-8';
 				$format = 'A4';
 				$marginLeft = 15;
@@ -50,39 +51,39 @@ class MpdfHooks {
 				$marginHeader = 9;
 				$marginFooter = 9;
 				$orientation = 'P';
-				$constr1 = explode('<!--mpdf<constructor', $html, 2 );
+				$constr1 = explode( '<!--mpdf<constructor', $html, 2 );
 				if ( isset( $constr1[1] ) ) {
 					list( $constr2 ) = explode( '/>', $constr1, 1 );
-					$matches = array();
-					if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr2, $matches ) ){
+					$matches = [];
+					if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr2, $matches ) ) {
 						$format = $matches[1];
 					}
-					if ( preg_match( '/margin-left\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-left\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginLeft = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-right\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-right\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginRight = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-top\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-top\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginTop = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-bottom\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-bottom\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginBottom = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-header\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-header\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginHeader = (float)$matches[1];
 					}
-					if ( preg_match( '/margin-footer\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ){
+					if ( preg_match( '/margin-footer\s*=\s*"?([0-9\.]+)/', $constr2, $matches ) ) {
 						$marginFooter = (float)$matches[1];
 					}
-					if ( preg_match( '/orientation\s*=\s*"(.*?)"/', $constr2, $matches ) ){
+					if ( preg_match( '/orientation\s*=\s*"(.*?)"/', $constr2, $matches ) ) {
 						$orientation = $matches[1];
 					}
 				}
-				$mpdf=new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
+				$mpdf = new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
 
 				$mpdf->WriteHTML( $html );
-				$mpdf->Output( $filename.'.pdf', 'D' );
+				$mpdf->Output( $filename . '.pdf', 'D' );
 			}
 			$output->disable();
 			return false;
@@ -91,11 +92,10 @@ class MpdfHooks {
 		return true;
 	}
 
-
 	/**
 	 * Add PDF to actions tabs in MonoBook based skins
 	 * @param Skin $skin
-	 * @param array $actions
+	 * @param array &$actions
 	 *
 	 * @return bool true
 	 */
@@ -103,20 +103,19 @@ class MpdfHooks {
 		global $wgMpdfTab;
 
 		if ( $wgMpdfTab ) {
-			$actions['mpdf'] = array(
+			$actions['mpdf'] = [
 				'class' => false,
 				'text' => wfMessage( 'mpdf-action' )->text(),
 				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
-			);
+			];
 		}
 		return true;
 	}
 
-
 	/**
 	 * Add PDF to actions tabs in vector based skins
 	 * @param Skin $skin
-	 * @param array $actions
+	 * @param array &$actions
 	 *
 	 * @return bool true
 	 */
@@ -124,17 +123,17 @@ class MpdfHooks {
 		global $wgMpdfTab;
 
 		if ( $wgMpdfTab ) {
-			$actions['views']['mpdf'] = array(
+			$actions['views']['mpdf'] = [
 				'class' => false,
 				'text' => wfMessage( 'mpdf-action' )->text(),
 				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
-			);
+			];
 		}
 		return true;
 	}
 
 	/**
-	 * @param $parser Parser
+	 * @param Parser &$parser
 	 * @return mixed
 	 */
 	public static function mpdftags_Render( &$parser ) {
@@ -143,16 +142,16 @@ class MpdfHooks {
 		array_shift( $params );
 
 		// Replace open and close tag for security reason
-		$values = str_replace( array('<', '>'), array('&lt;', '&gt;'), $params );
+		$values = str_replace( [ '<', '>' ], [ '&lt;', '&gt;' ], $params );
 
 		// Insert mpdf tags between <!--mpdf ... mpdf-->
 		$return = '<!--mpdf';
 		foreach ( $values as $val ) {
-			$return.="<".  $val ." />\n";
+			$return .= "<" . $val . " />\n";
 		}
 		$return .= "mpdf-->\n";
 
-		//Return mpdf tags as raw html
+		// Return mpdf tags as raw html
 		return $parser->insertStripItem( $return, $parser->mStripState );
 	}
 

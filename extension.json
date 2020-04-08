@@ -26,7 +26,8 @@
 		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs"
 	},
 	"config": {
-		"MpdfTab": false
+		"MpdfTab": false,
+		"MpdfSimpleOutput": false
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1

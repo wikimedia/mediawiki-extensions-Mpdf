@@ -21,15 +21,25 @@ class MpdfHooks {
 	 */
 	public static function onMediaWikiPerformAction( $output, $article, $title, $user, $request, $wiki ) {
 		if ( $request->getText( 'action' ) == 'mpdf' ) {
+			global $wgMpdfSimpleOutput;
 
 			$titletext = $title->getPrefixedText();
 			$filename = str_replace( [ '\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r", "\0" ], '_', $titletext );
 
-			$output->setPrintable();
-			$article->view();
-			ob_start();
-			$output->output();
-			$html = ob_get_clean();
+			if ( $wgMpdfSimpleOutput ) {
+				$article->render();
+				ob_start();
+				$output->output();
+				$url = $title->getFullURL();
+				$footer = "<p><em>$url</em></p><h1>$titletext</h1>\n";
+				$html = $footer . ob_get_clean();
+			} else {
+				$output->setPrintable();
+				$article->view();
+				ob_start();
+				$output->output();
+				$html = ob_get_clean();
+			}
 
 			// Initialise PDF variables
 			$format = $request->getText( 'format' );

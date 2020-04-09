@@ -17,13 +17,16 @@
 		"MpdfMagic": "Mpdf.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"MpdfHooks": "MpdfHooks.php"
+		"MpdfHooks": "MpdfHooks.php",
+		"MpdfAction": "MpdfAction.php"
 	},
 	"Hooks": {
-		"MediaWikiPerformAction": "MpdfHooks::onMediaWikiPerformAction",
 		"ParserFirstCallInit": "MpdfHooks::onParserFirstCallInit",
 		"SkinTemplateNavigation": "MpdfHooks::onSkinTemplateNavigation",
 		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs"
+	},
+	"Actions": {
+		"mpdf": "MpdfAction"
 	},
 	"config": {
 		"MpdfTab": false,

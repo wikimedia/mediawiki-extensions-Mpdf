@@ -94,7 +94,25 @@ class MpdfAction extends Action {
 			}
 			$mpdf = new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
 
+			// Suppress warning messages, because the mPDF library
+			// itself generates warnings (due to trying to add
+			// variables with a value of 'auto'), and if these get
+			// printed out, they can get into the PDF file and make
+			// it unreadable.
+			if ( function_exists( '\Wikimedia\suppressWarnings' ) ) {
+				// MW 1.31+
+				\Wikimedia\suppressWarnings();
+			} else {
+				wfSuppressWarnings();
+			}
 			$mpdf->WriteHTML( $html );
+			if ( function_exists( '\Wikimedia\restoreWarnings' ) ) {
+				// MW 1.31+
+				\Wikimedia\restoreWarnings();
+			} else {
+				wfRestoreWarnings();
+			}
+
 			$mpdf->Output( $filename . '.pdf', 'D' );
 		}
 		$output->disable();

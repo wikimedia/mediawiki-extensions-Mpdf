@@ -50,6 +50,37 @@ class MpdfHooks {
 	}
 
 	/**
+	 * Add "Export PDF" link to the toolbox.
+	 *
+	 * @param BaseTemplate $skinTemplate
+	 * @param array &$toolbox
+	 * @return bool
+	 */
+	public static function onBaseTemplateToolbox( BaseTemplate $skinTemplate, array &$toolbox ) {
+		global $wgMpdfToolboxLink;
+
+		if ( !$wgMpdfToolboxLink ) {
+			return true;
+		}
+
+		$title = $skinTemplate->getSkin()->getTitle();
+		// This hook doesn't usually get called for special pages,
+		// but sometimes it is.
+		if ( $title->isSpecialPage() ) {
+			return true;
+		}
+
+		$toolbox['mpdf'] = [
+			'msg' => 'mpdf-action',
+			'href' => $title->getLocalUrl( [ 'action' => 'mpdf' ] ),
+			'id' => 't-mpdf',
+			'rel' => 'mpdf'
+		];
+
+		return true;
+	}
+
+	/**
 	 * @param Parser &$parser
 	 * @return mixed
 	 */

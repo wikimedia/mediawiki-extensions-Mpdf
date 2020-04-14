@@ -23,13 +23,15 @@
 	"Hooks": {
 		"ParserFirstCallInit": "MpdfHooks::onParserFirstCallInit",
 		"SkinTemplateNavigation": "MpdfHooks::onSkinTemplateNavigation",
-		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs"
+		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs",
+		"BaseTemplateToolbox": "MpdfHooks::onBaseTemplateToolbox"
 	},
 	"Actions": {
 		"mpdf": "MpdfAction"
 	},
 	"config": {
 		"MpdfTab": false,
+		"MpdfToolboxLink": false,
 		"MpdfSimpleOutput": false
 	},
 	"load_composer_autoloader": true,

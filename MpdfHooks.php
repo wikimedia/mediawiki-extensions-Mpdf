@@ -2,6 +2,18 @@
 
 class MpdfHooks {
 
+	public static function registerExtension() {
+		global $wgHooks;
+
+		if ( class_exists( 'MediaWiki\HookContainer\HookContainer' ) ) {
+			// MW 1.35+
+			$wgHooks['SidebarBeforeOutput'][] = "MpdfHooks::onSidebarBeforeOutput";
+		} else {
+			// MW < 1.35
+			$wgHooks['BaseTemplateToolbox'][] = "MpdfHooks::onBaseTemplateToolbox";
+		}
+	}
+
 	/**
 	 * @param Parser &$parser
 	 */
@@ -30,7 +42,33 @@ class MpdfHooks {
 	}
 
 	/**
-	 * Add PDF to actions tabs in vector based skins
+	 * Add "PDF Export" link to the toolbox. Called with the
+	 * SidebarBeforeOutput hook, for MW >= 1.35.
+	 *
+	 * @param Skin $skin
+	 * @param array &$sidebar
+	 * @return bool
+	 */
+	public static function onSidebarBeforeOutput( Skin $skin, array &$sidebar ) {
+		global $wgMpdfToolboxLink;
+
+		if ( !$wgMpdfToolboxLink ) {
+			return true;
+		}
+
+		$sidebar['TOOLBOX']['mpdf'] = [
+			'msg' => 'mpdf-action',
+			'href' => $title->getLocalUrl( [ 'action' => 'mpdf' ] ),
+			'id' => 't-mpdf',
+			'rel' => 'mpdf'
+		];
+
+		return true;
+	}
+
+	/**
+	 * Add "PDF Export" link to the toolbox. Called with the
+	 * BaseTemplateToolbox hook, for MW < 1.35.
 	 * @param Skin $skin
 	 * @param array &$actions
 	 *

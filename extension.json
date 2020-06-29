@@ -8,6 +8,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.25.0"
 	},
+	"callback": "MpdfHooks::registerExtension",
 	"MessagesDirs": {
 		"Mpdf": [
 			"i18n"

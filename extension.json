@@ -24,7 +24,6 @@
 	"Hooks": {
 		"ParserFirstCallInit": "MpdfHooks::onParserFirstCallInit",
 		"SkinTemplateNavigation": "MpdfHooks::onSkinTemplateNavigation",
-		"SkinTemplateTabs": "MpdfHooks::onSkinTemplateTabs",
 		"BaseTemplateToolbox": "MpdfHooks::onBaseTemplateToolbox"
 	},
 	"Actions": {

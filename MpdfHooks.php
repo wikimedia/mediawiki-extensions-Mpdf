@@ -22,26 +22,6 @@ class MpdfHooks {
 	}
 
 	/**
-	 * Add PDF to actions tabs in MonoBook based skins
-	 * @param Skin $skin
-	 * @param array &$actions
-	 *
-	 * @return bool true
-	 */
-	public static function onSkinTemplateTabs( $skin, &$actions ) {
-		global $wgMpdfTab;
-
-		if ( $wgMpdfTab ) {
-			$actions['mpdf'] = [
-				'class' => false,
-				'text' => wfMessage( 'mpdf-action' )->text(),
-				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
-			];
-		}
-		return true;
-	}
-
-	/**
 	 * Add "PDF Export" link to the toolbox. Called with the
 	 * SidebarBeforeOutput hook, for MW >= 1.35.
 	 *

@@ -36,6 +36,11 @@ class MpdfHooks {
 			return true;
 		}
 
+		$title = $skin->getTitle();
+		if ( $title->isSpecialPage() ) {
+			return true;
+		}
+
 		$sidebar['TOOLBOX']['mpdf'] = [
 			'msg' => 'mpdf-action',
 			'href' => $title->getLocalUrl( [ 'action' => 'mpdf' ] ),

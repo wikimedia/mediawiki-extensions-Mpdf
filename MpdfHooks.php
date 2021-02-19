@@ -123,7 +123,7 @@ class MpdfHooks {
 		$return .= "mpdf-->\n";
 
 		// Return mpdf tags as raw html
-		return $parser->insertStripItem( $return, $parser->mStripState );
+		return $parser->insertStripItem( $return );
 	}
 
 }

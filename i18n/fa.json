@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Armin1392",
+			"Beginneruser",
 			"Mjbmr"
 		]
 	},
-	"mpdf-action": "خروجی پی‌دی‌اف",
+	"mpdf-action": "برون‌بری پی‌دی‌اف",
 	"mpdf-desc": "تبدیل صفحهٔ فعلی به پی‌دی‌اف و فرستادن به مرورگر"
 }

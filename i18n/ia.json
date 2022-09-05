@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"mpdf-action": "Exportation in PDF",
+	"mpdf-desc": "Converte le pagina actual in PDF e lo invia al navigator"
+}

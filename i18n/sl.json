@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"mpdf-action": "Izvoz v PDF",
+	"mpdf-desc": "Pretvori trenutno stran v PDFin jo pošlje brskalniku"
+}

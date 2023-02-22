@@ -92,6 +92,17 @@ class MpdfAction extends Action {
 					$orientation = $matches[1];
 				}
 			}
+
+			$tempDir = wfTempDir();
+			if ( !defined( '_MPDF_TEMP_PATH' ) ) {
+				define( "_MPDF_TEMP_PATH", "$tempDir/mpdf/temp/" );
+				wfMkdirParents( _MPDF_TEMP_PATH );
+			}
+			if ( !defined( '_MPDF_TTFONTDATAPATH' ) ) {
+				define( '_MPDF_TTFONTDATAPATH', "$tempDir/mpdf/ttfontdata/" );
+				wfMkdirParents( _MPDF_TTFONTDATAPATH );
+			}
+
 			$mpdf = new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
 
 			// Suppress warning messages, because the mPDF library

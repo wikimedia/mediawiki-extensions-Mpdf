@@ -23,7 +23,7 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "MpdfHooks::onParserFirstCallInit",
-		"SkinTemplateNavigation": "MpdfHooks::onSkinTemplateNavigation",
+		"SkinTemplateNavigation::Universal": "MpdfHooks::onSkinTemplateNavigationUniversal",
 		"BaseTemplateToolbox": "MpdfHooks::onBaseTemplateToolbox"
 	},
 	"Actions": {

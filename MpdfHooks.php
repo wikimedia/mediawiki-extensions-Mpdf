@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class MpdfHooks {
 
 	public static function registerExtension() {
@@ -54,22 +56,19 @@ class MpdfHooks {
 	/**
 	 * Add "PDF Export" link to the toolbox. Called with the
 	 * BaseTemplateToolbox hook, for MW < 1.35.
-	 * @param Skin $skin
-	 * @param array &$actions
-	 *
-	 * @return bool true
+	 * @param SkinTemplate $sktemplate
+	 * @param array &$links
 	 */
-	public static function onSkinTemplateNavigation( $skin, &$actions ) {
-		global $wgMpdfTab;
+	public static function onSkinTemplateNavigationUniversal( SkinTemplate $sktemplate, array &$links ) {
+		$mpdfTab = MediaWikiServices::getInstance()->getMainConfig()->get( 'MpdfTab' );
 
-		if ( $wgMpdfTab ) {
-			$actions['views']['mpdf'] = [
+		if ( $mpdfTab ) {
+			$links['views']['mpdf'] = [
 				'class' => false,
 				'text' => wfMessage( 'mpdf-action' )->text(),
-				'href' => $skin->getTitle()->getLocalURL( "action=mpdf" ),
+				'href' => $sktemplate->getTitle()->getLocalURL( 'action=mpdf' ),
 			];
 		}
-		return true;
 	}
 
 	/**

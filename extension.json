@@ -1,14 +1,13 @@
 {
 	"name": "Mpdf",
-	"version": "1.0",
+	"version": "1.1",
 	"author": "[https://www.mediawiki.org/wiki/User:Pastakhov Pavel Astakhov]",
 	"url": "https://www.mediawiki.org/wiki/Extension:Mpdf",
 	"descriptionmsg": "mpdf-desc",
 	"license-name": "GPL-2.0+",
 	"requires": {
-		"MediaWiki": ">= 1.25.0"
+		"MediaWiki": ">= 1.35.0"
 	},
-	"callback": "MpdfHooks::registerExtension",
 	"MessagesDirs": {
 		"Mpdf": [
 			"i18n"

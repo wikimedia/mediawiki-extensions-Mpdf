@@ -4,18 +4,6 @@ use MediaWiki\MediaWikiServices;
 
 class MpdfHooks {
 
-	public static function registerExtension() {
-		global $wgHooks;
-
-		if ( class_exists( 'MediaWiki\HookContainer\HookContainer' ) ) {
-			// MW 1.35+
-			$wgHooks['SidebarBeforeOutput'][] = "MpdfHooks::onSidebarBeforeOutput";
-		} else {
-			// MW < 1.35
-			$wgHooks['BaseTemplateToolbox'][] = "MpdfHooks::onBaseTemplateToolbox";
-		}
-	}
-
 	/**
 	 * @param Parser &$parser
 	 */
@@ -24,8 +12,8 @@ class MpdfHooks {
 	}
 
 	/**
-	 * Add "PDF Export" link to the toolbox. Called with the
-	 * SidebarBeforeOutput hook, for MW >= 1.35.
+	 * Add "PDF Export" link to the toolbox
+	 * Called with the SidebarBeforeOutput hook.
 	 *
 	 * @param Skin $skin
 	 * @param array &$sidebar
@@ -54,8 +42,10 @@ class MpdfHooks {
 	}
 
 	/**
-	 * Add "PDF Export" link to the toolbox. Called with the
-	 * BaseTemplateToolbox hook, for MW < 1.35.
+	 * Adds a "PDF Export" link to the set of tabs/actions, if one was
+	 * specified.
+	 * Called with the SkinTemplateNavigation::Universal hook.
+	 *
 	 * @param SkinTemplate $sktemplate
 	 * @param array &$links
 	 */
@@ -69,37 +59,6 @@ class MpdfHooks {
 				'href' => $sktemplate->getTitle()->getLocalURL( 'action=mpdf' ),
 			];
 		}
-	}
-
-	/**
-	 * Add "Export PDF" link to the toolbox.
-	 *
-	 * @param BaseTemplate $skinTemplate
-	 * @param array &$toolbox
-	 * @return bool
-	 */
-	public static function onBaseTemplateToolbox( BaseTemplate $skinTemplate, array &$toolbox ) {
-		global $wgMpdfToolboxLink;
-
-		if ( !$wgMpdfToolboxLink ) {
-			return true;
-		}
-
-		$title = $skinTemplate->getSkin()->getTitle();
-		// This hook doesn't usually get called for special pages,
-		// but sometimes it is.
-		if ( $title->isSpecialPage() ) {
-			return true;
-		}
-
-		$toolbox['mpdf'] = [
-			'msg' => 'mpdf-action',
-			'href' => $title->getLocalUrl( [ 'action' => 'mpdf' ] ),
-			'id' => 't-mpdf',
-			'rel' => 'mpdf'
-		];
-
-		return true;
 	}
 
 	/**

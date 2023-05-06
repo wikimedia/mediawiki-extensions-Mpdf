@@ -3,6 +3,8 @@
  * Handles the 'mpdf' action.
  */
 
+use MediaWiki\MediaWikiServices;
+
 class MpdfAction extends Action {
 
 	/**
@@ -27,7 +29,7 @@ class MpdfAction extends Action {
 		$titletext = $title->getPrefixedText();
 		$filename = str_replace( [ '\\', '/', ':', '*', '?', '"', '<', '>', "\n", "\r", "\0" ], '_', $titletext );
 		$article = new Article( $title );
-		Hooks::run( 'MpdfGetArticle', [ $title, &$article ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'MpdfGetArticle', [ $title, &$article ] );
 
 		if ( $wgMpdfSimpleOutput ) {
 			$article->render();

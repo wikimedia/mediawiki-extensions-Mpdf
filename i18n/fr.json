@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Linedwell",
-			"Wyz"
+			"Wyz",
+			"Verdy p"
 		]
 	},
 	"mpdf-action": "Exporter en PDF",
-	"mpdf-desc": "Convertit en PDF la page actuelle et l'envoie au navigateur"
+	"mpdf-desc": "Convertit en PDF la page actuelle et l’envoie au navigateur"
 }

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"mpdf-action": "RDF eksportavimas",
+	"mpdf-desc": "Konvertuoja dabartinį puslapį į PDF ir siunčia į naršyklę"
+}

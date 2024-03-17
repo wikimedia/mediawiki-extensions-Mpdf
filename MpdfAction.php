@@ -68,7 +68,7 @@ class MpdfAction extends Action {
 			$orientation = 'P';
 			$constr1 = explode( '<!--mpdf<constructor', $html, 2 );
 			if ( isset( $constr1[1] ) ) {
-				list( $constr2 ) = explode( '/>', $constr1[1], 1 );
+				[ $constr2 ] = explode( '/>', $constr1[1], 1 );
 				$matches = [];
 				if ( preg_match( '/format\s*=\s*"(.*?)"/', $constr2, $matches ) ) {
 					$format = $matches[1];

@@ -96,17 +96,23 @@ class MpdfAction extends Action {
 				}
 			}
 
-			$tempDir = wfTempDir();
-			if ( !defined( '_MPDF_TEMP_PATH' ) ) {
-				define( "_MPDF_TEMP_PATH", "$tempDir/mpdf/temp/" );
-				wfMkdirParents( _MPDF_TEMP_PATH );
-			}
-			if ( !defined( '_MPDF_TTFONTDATAPATH' ) ) {
-				define( '_MPDF_TTFONTDATAPATH', "$tempDir/mpdf/ttfontdata/" );
-				wfMkdirParents( _MPDF_TTFONTDATAPATH );
-			}
+			$parameters = [
+				'mode' => $mode,
+				'format' => $format,
+				'default_font_size' => 0,
+				'default_font' => '',
+				'mgl' => $marginLeft,
+				'mgr' => $marginRight,
+				'mgt' => $marginTop,
+				'mgb' => $marginBottom,
+				'mgh' => $marginHeader,
+				'mgf' => $marginFooter,
+				'orientation' => $orientation,
+				// mPDF creates inside the directory 'tempDir' a subdirectory 'mpdf' since mPDF 8.0.10
+				'tempDir' => wfTempDir(),
+			];
 
-			$mpdf = new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
+			$mpdf = new \Mpdf\Mpdf( $parameters );
 
 			// Suppress warning messages, because the mPDF library
 			// itself generates warnings (due to trying to add

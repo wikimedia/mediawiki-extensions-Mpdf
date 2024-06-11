@@ -1,6 +1,6 @@
 {
 	"require": {
-		"mpdf/mpdf": "^6.1"
+		"mpdf/mpdf": "^8.3"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "52.0.0",

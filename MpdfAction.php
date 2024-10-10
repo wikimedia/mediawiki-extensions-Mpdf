@@ -4,6 +4,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 
 class MpdfAction extends Action {
 
@@ -113,19 +114,9 @@ class MpdfAction extends Action {
 			// variables with a value of 'auto'), and if these get
 			// printed out, they can get into the PDF file and make
 			// it unreadable.
-			if ( function_exists( '\Wikimedia\suppressWarnings' ) ) {
-				// MW 1.31+
-				\Wikimedia\suppressWarnings();
-			} else {
-				wfSuppressWarnings();
-			}
+			AtEase::suppressWarnings();
 			$mpdf->WriteHTML( $html );
-			if ( function_exists( '\Wikimedia\restoreWarnings' ) ) {
-				// MW 1.31+
-				\Wikimedia\restoreWarnings();
-			} else {
-				wfRestoreWarnings();
-			}
+			AtEase::restoreWarnings();
 
 			$mpdf->Output( $filename . '.pdf', 'D' );
 		}

@@ -4,6 +4,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 
 class MpdfAction extends Action {
 
@@ -21,6 +22,20 @@ class MpdfAction extends Action {
 	 */
 	public function show() {
 		global $wgMpdfSimpleOutput;
+		global $wgMpdfDefaultFont;
+		global $wgMpdfAutoScriptToLang;
+		global $wgMpdfUseAdobeCJK;
+
+		// Set default values if not configured
+		if ( !isset( $wgMpdfDefaultFont ) ) {
+			$wgMpdfDefaultFont = 'DejaVuSans';
+		}
+		if ( !isset( $wgMpdfAutoScriptToLang ) ) {
+			$wgMpdfAutoScriptToLang = true;
+		}
+		if ( !isset( $wgMpdfUseAdobeCJK ) ) {
+			$wgMpdfUseAdobeCJK = false;
+		}
 
 		$title = $this->getTitle();
 		$output = $this->getOutput();
@@ -80,7 +95,7 @@ class MpdfAction extends Action {
 					$marginRight = (float)$matches[1];
 				}
 				if ( preg_match( '/margin-top\s*=\s*"?([0-9.]+)/', $constr2, $matches ) ) {
-						$marginTop = (float)$matches[1];
+					$marginTop = (float)$matches[1];
 				}
 				if ( preg_match( '/margin-bottom\s*=\s*"?([0-9.]+)/', $constr2, $matches ) ) {
 					$marginBottom = (float)$matches[1];
@@ -106,15 +121,30 @@ class MpdfAction extends Action {
 				wfMkdirParents( _MPDF_TTFONTDATAPATH );
 			}
 
-			$mpdf = new mPDF( $mode, $format, 0, '', $marginLeft, $marginRight, $marginTop, $marginBottom, $marginHeader, $marginFooter, $orientation );
+			$mpdf = new \Mpdf\Mpdf( [
+				'mode' => $mode,
+				'format' => $format,
+				'margin_left' => $marginLeft,
+				'margin_right' => $marginRight,
+				'margin_top' => $marginTop,
+				'margin_bottom' => $marginBottom,
+				'margin_header' => $marginHeader,
+				'margin_footer' => $marginFooter,
+				'orientation' => $orientation,
+				'tempDir' => _MPDF_TEMP_PATH,
+				'default_font' => $wgMpdfDefaultFont,
+				'autoScriptToLang' => $wgMpdfAutoScriptToLang,
+				'useAdobeCJK' => $wgMpdfUseAdobeCJK,
+			] );
 
 			// Suppress warning messages, because the mPDF library
 			// itself generates warnings (due to trying to add
 			// variables with a value of 'auto'), and if these get
 			// printed out, they can get into the PDF file and make
 			// it unreadable.
-			// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
-			@$mpdf->WriteHTML( $html );
+			AtEase::suppressWarnings();
+			$mpdf->WriteHTML( $html );
+			AtEase::restoreWarnings();
 
 			$mpdf->Output( $filename . '.pdf', 'D' );
 		}

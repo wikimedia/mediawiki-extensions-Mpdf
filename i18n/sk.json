@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"mpdf-action": "Export do PDF",
+	"mpdf-desc": "Konvertuje aktuálnu stránku do PDF a odošle ju do prehliadača"
+}
